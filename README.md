@@ -54,7 +54,7 @@ Once this is done, xee automatically calls back the ```xee/getAccessToken``` scr
 
 In order to use the connector, you need to import the main module: ```xee/user```, as described below:
 ```
-var userModule = require("xee/user");
+var userModule = require("/modules/xee/user");
 ```
 Then create a new instance of the User class, defined in this module (we assume that we already otbained an access token for the given user):
 ```
