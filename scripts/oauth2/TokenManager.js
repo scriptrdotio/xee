@@ -13,8 +13,8 @@ execute=authenticated
  * @module TokenManager
  */
 
-var config = require("/modules/xee/oauth2/config");
-var util = require("/modules/xee/oauth2/util");
+var config = require("/modules/xee/oauth2/config.js");
+var util = require("/modules/xee/oauth2/util.js");
 var http = require("http");
 
 /** 

@@ -4,8 +4,8 @@ write=nobody
 execute=anonymous 
   **/ 
  
- var tokenManager = require("/modules/xee/oauth2/TokenManager");
-var config = require("/modules/xee/oauth2/config");
+ var tokenManager = require("/modules/xee/oauth2/TokenManager.js");
+var config = require("/modules/xee/oauth2/config.js");
 
 try {
   

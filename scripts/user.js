@@ -4,11 +4,11 @@ write=nobody
 execute=authenticated 
   **/ 
  
- var clientModule = require("./client");
-var vehicleModule = require("./vehicle");
-var notifications = require("./notifications/notificationsManager");
-var config = require("./oauth2/config");
-var util = require("./util");
+ var clientModule = require("./client.js");
+var vehicleModule = require("./vehicle.js");
+var notifications = require("./notifications/notificationsManager.js");
+var config = require("./oauth2/config.js");
+var util = require("./util.js");
 
 /**
  * This class represents a Xee user. Use instances of it to obtain data a bout a given Xee user

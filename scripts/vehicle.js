@@ -3,11 +3,11 @@
 write=nobody
 execute=authenticated 
   **/ 
- var clientModule = require("/modules/xee/client");
-var util = require("/modules/xee/util");
-var notifications = require("/modules/xee/notifications/notificationsManager");
-var tripModule = require("./trip");
-var config = require("/modules/xee/oauth2/config");
+ var clientModule = require("/modules/xee/client.js");
+var util = require("/modules/xee/util.js");
+var notifications = require("/modules/xee/notifications/notificationsManager.js");
+var tripModule = require("./trip.js");
+var config = require("/modules/xee/oauth2/config.js");
 
 /**
  * Use instance of this class to obtain data about a given vehicle

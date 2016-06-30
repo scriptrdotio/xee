@@ -16,8 +16,8 @@ execute=anonymous
  * the one of the user's account
  */
 
-var config = require("/modules/xee/oauth2/config");
-var util = require("/modules/xee/util");
+var config = require("/modules/xee/oauth2/config.js");
+var util = require("/modules/xee/util.js");
 
 try {
   

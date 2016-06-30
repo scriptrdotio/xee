@@ -14,9 +14,9 @@ execute=authenticated
  * @param apsdb.documentKey: the handle to the subscription document, used to retrieve subscription data
  */
 
-var notifications = require("/modules/xee/notifications/notificationsManager");
-var userModule = require("/modules/xee/user");
-var config = require("/modules/xee/config");
+var notifications = require("/modules/xee/notifications/notificationsManager.js");
+var userModule = require("/modules/xee/user.js");
+var config = require("/modules/xee/config.js");
 var pubsub = require("pubsub");
 var log = require("log");
 

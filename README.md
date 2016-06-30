@@ -54,7 +54,7 @@ Once this is done, xee automatically calls back the ```xee/getAccessToken``` scr
 
 In order to use the connector, you need to import the main module: ```xee/user```, as described below:
 ```
-var userModule = require("/modules/xee/user");
+var userModule = require("/modules/xee/user.js");
 ```
 Then create a new instance of the User class, defined in this module (we assume that we already otbained an access token for the given user):
 ```
@@ -62,7 +62,7 @@ var user = new userModule.User({username:"edison"});
 ```
 The User class provides many methods to obtain data related to the end user, such as:
 ```
-var accountDetails = user.getAccount("some_account_id"); // details of a specific xee user account
+var accountDetails = user.getAccount("some_account_id"); // details of a specific xee user accounte m
 var vehicles = user.listVehicles(); // lists the vehicles added by this user to his xee accounts
 ```
 In order to manipulate the end user's vehicles, you first need to obtain a reference to an instance of the Vehicle class. You can do this by invoking the ```getVehicle(id)``` method of your ```User``` instance, as follows:

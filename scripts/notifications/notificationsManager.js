@@ -3,8 +3,8 @@
 write=nobody
 execute=authenticated 
   **/ 
-var util = require("/modules/xee/util");
-var config = require("/modules/xee/config");
+var util = require("/modules/xee/util.js");
+var config = require("/modules/xee/config.js");
 var pubsub = require("pubsub");
 
 var HANDLE_FIELD = "handle";

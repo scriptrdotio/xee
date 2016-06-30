@@ -4,9 +4,9 @@ write=nobody
 execute=authenticated 
   **/ 
  
- var config = require("/modules/xee/oauth2/config");
+ var config = require("/modules/xee/oauth2/config.js");
 var http = require("http");
-var tokenMgr = require("/modules/xee/oauth2/TokenManager");
+var tokenMgr = require("/modules/xee/oauth2/TokenManager.js");
 
 /**
  * A generic http client that handles the communication with remote APIs

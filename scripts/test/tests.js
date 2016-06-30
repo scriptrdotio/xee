@@ -9,7 +9,7 @@ execute=authenticated
  */
 
 // First, require the user module
-var userModule = require("modules/xee/user");
+var userModule = require("modules/xee/user.js");
 
 try {
   
