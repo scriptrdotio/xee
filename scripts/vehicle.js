@@ -3,10 +3,10 @@
 write=nobody
 execute=authenticated 
   **/ 
- 
  var clientModule = require("/modules/xee/client");
 var util = require("/modules/xee/util");
 var notifications = require("/modules/xee/notifications/notificationsManager");
+var tripModule = require("./trip");
 var config = require("/modules/xee/oauth2/config");
 
 /**
@@ -39,12 +39,9 @@ function Vehicle(vehicleDto) {
   this.client = new clientModule.Client({username : this.username});
   if (vehicleDto.data) {
     
-    this.brand = vehicleDto.data.brand;
-    this.id = vehicleDto.data.id;
-    this.model = vehicleDto.data.model;
-    this.name = vehicleDto.data.name;
-    this.plateNumber = vehicleDto.data.plateNumber;
-    this.year = vehicleDto.data.year
+    for (var prop in vehicleDto.data) {
+      this[prop] = vehicleDto.data[prop];
+    }
   }
   
   this.notificationMgr = null;
@@ -685,6 +682,48 @@ Vehicle.prototype.getLastKnowLocation = function() {
   }
   
   return {}
+};
+
+/**
+ * Return the list of trips taken by the current vehicle
+ * @method listTrips
+ * @param {DateTime} begin: the date to start the listing from, date in ISO string format, optional
+ * @param {DateTime} begin: the date to stop the listing at, date in ISO string format, optional
+ * @return {Array} of trips
+ */
+Vehicle.prototype.listTrips = function(dto) {
+ 
+  dto = dto ? dto : {};
+  var query = {
+    
+    url : config.apiUrl + "/" +  config.apiVer + "/cars/" + this.id + "/trips",
+    method : "GET"
+  };
+  
+  if (dto.begin) {
+    
+  	query.params = query.params ? queryparams : {};
+    query.params.begin = dto.begin;
+  }
+  
+  if (dto.end) {
+    
+  	query.params = query.params ? queryparams : {};
+    query.params.end = dto.end;
+  }
+  
+  var response = this.client.callApi(query);
+  var trips = [];
+  if (response && response.length > 0) {
+  	  
+    for (var tripData in response) {
+      
+      var trip = new tripModule.Trip({client:this.client, data: response[tripData]});
+      trips.push(trip);
+    }
+  }  
+  
+  return trips;
 };
 
 Vehicle.prototype._getSpecificVariableStatus = function(variables) {
