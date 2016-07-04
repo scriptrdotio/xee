@@ -18,7 +18,7 @@ var autoUpdateFrequency = "* * * * ?";
  * Specify what script to use to monitor the vehicle's components.
  * default is "xee/notifications/notificationHandler"
  */
-var autoUpdateScript = "/modules/xee/notifications/notificationHandler";
+var autoUpdateScript = "modules/xee/notifications/notificationHandler.js";
 
 /*
  * Set to true if you need to send monitoring notifications through publish/subcribe
