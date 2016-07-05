@@ -48,6 +48,29 @@ function Vehicle(vehicleDto) {
 }
 
 /**
+ * Force an update of the current vehicle's data by triggering a request to the Xee platform
+ * @method getInfo
+ * @return {Object} all current vehicle's fields
+ */ 
+Vehicle.prototype.getInfo = function() {
+  
+  var query = {
+    
+    url : config.apiUrl + "/" +  config.apiVer + "/cars/" + this.id,
+    method : "GET"
+  };
+  
+  var result = this.client.callApi(query);
+  if (result) {
+    
+    for (var prop in result) {
+      this[prop] = result[prop];
+    }
+  }
+  return result;
+};
+
+/**
  * Subscribe to the monitoring of a component of the car (e.g. EngineSpeed) and receive notifications
  * when the specified conditions are met, i.e when the component's current value meets the rule defined by
  * the subscription.
