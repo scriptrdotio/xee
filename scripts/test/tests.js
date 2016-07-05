@@ -55,7 +55,6 @@ try {
   //data.locationAsc = vehicle.getLocationRecords("asc");
   //data.lastKnowLocation = vehicle.getLastKnowLocation();
   //data.info = vehicle.getInfo();
-  //data.info = vehicle.getInfo("asc");
   //data.statusOverview = vehicle.getStatusOverview();
   //data.wiperStatus = vehicle.getWiperStatus();
   //data.wheelsStatus = vehicle.getWheelsStatus();
