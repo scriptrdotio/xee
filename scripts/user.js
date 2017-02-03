@@ -120,7 +120,7 @@ User.prototype.getVehicle = function(dto) {
     
     if (dto.plateNumber) {
       
-      searchField = "plateNumber"; 
+      searchField = "numberPlate"; 
       value = dto.plateNumber;
     } else {
       
